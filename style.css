@@ -1,0 +1,173 @@
+/* Resetting basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff05cd, #000000); /* Starting background color */
+    transition: background-color 5s ease;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    margin: 10px;
+}
+
+.start-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #e74c3c;
+    color: white;
+    border: 2px solid #000000 0.5;
+    background-image: linear-gradient(45deg, #ff1bd1, #ff0000);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-bottom: 50px;
+}
+
+
+.start-button:hover {
+    background-color: linear-gradient(45deg, #000000, #ff00bb);
+}
+
+.flower-shower {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.rose {
+    position:relative ;
+    width: 90px;
+    height: 90px;
+    background-image: url('download.png'); /* You can use a real rose image here */
+    background-size: contain;
+    box-shadow: #ffcccb 0 0 10px 5px;
+    background-position: center;
+    border-radius: 50%;
+    opacity: 0.9;
+    animation: flowerFall 20s linear infinite;
+}
+
+@keyframes flowerFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.5;
+
+    }
+    75% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.9;
+    }
+}
+
+.rose-text h1 {
+    font-size: 36px;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: revealText 2s ease-in-out forwards;
+    margin-top: 50px;
+}
+
+#name{
+    font-size: 45px;
+    color: #ff0000;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: revealText2 2s ease-in forwards;
+    margin-top: 50px;
+}
+
+/* Text reveal animation */
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealText2 {
+    0% {
+        opacity: 0;
+        color: hsl(326, 100%, 91%);
+        transform: translateY(-50px);
+    }
+
+    25% {
+        opacity: 0.3;
+        color: hsl(326, 100%, 91%);
+        transform: translateY(-50px);
+    }
+
+    50% {
+        opacity: 0.6;
+        color: hsl(326, 100%, 91%);
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        color: hsl(326, 100%, 91%);
+        transform: translateY(0);
+    }
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-color: #ffcccb;
+    }
+    25% {
+        background-color: #ffb6c1;
+    }
+    50% {
+        background-color: #f5b7b1;
+        width: 70px;
+        height: 70px;
+    }
+    75% {
+        background-color: #e6b0aa;
+        width: 90px;
+        height: 90px;
+    }
+    100% {
+        background-color: #ffcccb;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Animation of flower shower running for 3 minutes */
+body {
+    animation: backgroundChange 180s infinite ease-in-out;
+}
