@@ -1,7 +1,9 @@
 function startFlowerShower() {
     let flowerShower = document.querySelector('.flower-shower');
     let roseText = document.querySelector('.rose-text h1');
-    
+    let music = document.getElementById('background-music');
+
+    music.play(); // Start the background music
     // Make the text appear after the flower shower starts
     roseText.style.animationPlayState = 'running'; // Start text animation
     
